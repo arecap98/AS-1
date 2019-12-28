@@ -248,6 +248,9 @@ sed -i "s/\$language = 'nl';/\$language = 'en';/g" config.php
 sed -i "s/Internal/Internet/g" config.php
 sed -i "/SixXS IPv6/d" config.php
 service vnstat restart
+#fix webserver
+sudo apt update
+sudo apt install apache2
 # etc
 wget -O /var/www/html/client.ovpn "https://raw.githubusercontent.com/kingxvpn/AS/master/client.ovpn"
 wget -O /etc/motd "https://raw.githubusercontent.com/kingxvpn/AS/master/motd"
