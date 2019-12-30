@@ -250,13 +250,13 @@ sudo apt update
 sudo apt install apache2
 rm -f /var/ww/html/index.html
 # etc
-wget -O /var/www/html/client.rar "https://raw.githubusercontent.com/kingxvpn/AS/master/client.rar"
+wget -O /var/www/html/client.ovpn "https://raw.githubusercontent.com/kingxvpn/AS/master/client.ovpn"
 wget -O /var/www/html/index.html "https://raw.githubusercontent.com/kingxvpn/AS/master/index.html"
 wget -O /etc/motd "https://raw.githubusercontent.com/kingxvpn/AS/master/motd"
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 sed -i 's/1194/443/g' /etc/openvpn/server.conf
 sed -i '$ i\port-share 0.0.0.0 444' /etc/openvpn/server.conf
-sed -i "s/ipserver/$myip/g" /var/www/html/client.rar
+sed -i "s/ipserver/$myip/g" /var/www/html/client.ovpn
 useradd -m -g users -s /bin/bash kingx
 echo "kingx:izham5788" | chpasswd
 echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
